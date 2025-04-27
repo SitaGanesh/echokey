@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="harmony.css">
+  <!-- for icon on the website -->
+  <link rel="shortcut icon" type="x-icon" href="images/echokey_logo2.png">
+  <!-- bootstrap link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>EchoKey Game</title>
+</head>
+
+<body class="body">
+  <!-- preloading div will load the starting content for 1800ms  -->
+  <div id="preloader">
+    <img src="images/echokey_logo2.png" alt="" id="imgLoader">
+  </div>
+  <!-- here the main content gets started -->
+  <main id="mainContent">
+    <!-- header with 2images and heading element -->
+    <div class="heading">
+      <img src="images/header-img1.png" alt="" class="headerImg">
+      <h1 id="heading">EchoKey Game</h1>
+      <img src="images/header-img2.png" alt="" class="headerImg">
+    </div>
+
+    <!-- container with start button, radio inputs-->
+    <div class="container" id="container">
+      <div class="div-elements">
+        <div class="button-start">
+          <button type="button" class="btn btn-success" id="startButton">Start</button>
+          <button type="button" class="btn btn-info" id="infoButton">Documentation</button>
+        </div>
+        <div id="infoDiv">
+          <ol>
+            <p style="margin-top: 20px;">These game leads you to excell's typing skills instantly. Follow the below
+              steps, it tells you overall
+              about the EchoKey game:</p>
+            <li>Select the timer you want to play, Click on the <b>radio</b> button. </li>
+            <li>To start the game click on <b>Start</b> button</li>
+            <li>There are Five <b>Boxes</b> on the screen, displaying the random letters on each box.</li>
+            <li>Try to type the <b>Key</b> on the keyboard that are matching in the <b> boxes </b></li>
+            <li>Play till the time gets end which you have selected for at limit.</li>
+            <li>If you entered wrong key press <b>Enter</b> on keyboard or <b>Ok</b> from screen (relaxation time too... (timer gets stopped))</li>
+            <li>You can also change the <b>background</b> image by clicking <b>ChangeBg</b> button</li>
+            <li>Check Your results at the end of the game, see the <b>Performance</b> and <b>Improvement</b> you yet
+              achieved.</li>
+            <li>Share your best <b>Scores</b> with your friends</li>
+          </ol>
+          <ul>
+            <li>You can also click on those boxes sequentially. To generate new word in the box, <b>Press Two Times</b>
+              to the end box</li>
+          </ul>
+          <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+              <div class="col-md-4 d-flex align-items-center">
+                <a href="echoKey.html" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+                  <img src="images/echokey_logo2.png" alt="logo" width="33" height="24" style="border-radius:10%;">
+                </a>
+                <span class="mb-3 mb-md-0 text-body-secondary">© 2024 EchoKey game, Inc</span>
+              </div>
+              <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-body-secondary" href="https://twitter.com/ganesh_sita07"
+                    target="_blank"><i class="fa-brands fa-x-twitter fa-xl"></i></a></li>
+                <li class="ms-3"><a class="text-body-secondary" href="https://www.linkedin.com/in/s-ganesh-96281b256/"
+                    target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a></li>
+                <li class="ms-3"><a class="text-body-secondary" href="https://github.com/SitaGanesh" target="_blank"><i
+                      class="fa-brands fa-github fa-xl"></i></a></li>
+              </ul>
+            </footer>
+            <button type="button" class="btn btn-danger btnb" id="goBack">Back</button>
+          </div>
+        </div>
+        <div style="display: flex;">
+
+          <div class="dropdown-timer" id="dropdownTimer">
+            <form>
+
+              <input type="radio" id="1minute" name="minutes" value="60" checked>
+                <label for="1minute">1 minute</label>
+                <input type="radio" id="2minute" name="minutes" value="120">
+                <label for="2minute">2 minutes</label>
+                <input type="radio" id="5minute" name="minutes" value="300">
+                <label for="5minute">5 minutes</label>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- continous timer styles -->
+    <div class="continous-timer" id="continousTimer">
+    </div>
+    <!-- flex boxes -->
+    <div class="flex">
+      <div class="boxes">
+        <button class="box box-class1" id="box1" onclick="applyBoxPressedStyle('box-class1')"></button>
+        <button class="box box-class2" id="box2" onclick="applyBoxPressedStyle('box-class2')"></button>
+        <button class="box box-class3" id="box3" onclick="applyBoxPressedStyle('box-class3')"></button>
+        <button class="box box-class4" id="box4" onclick="applyBoxPressedStyle('box-class4')"></button>
+        <button class="box box-class5" id="box5" onclick="applyBoxPressedStyle('box-class5')"></button>
+      </div>
+    </div>
+    <!-- box name  -->
+    <div class="box-name">
+      <h3 id="boxName"></h3>
+    </div>
+    <!-- score counter div -->
+    <div class="score-counter">
+      <div class="one" id="score"></div>
+      <div class="one" id="completedWordCountDiv"></div>
+    </div>
+    <!-- changing background button -->
+    <div class="change-bg">
+      <button class="btn btn-success" id="changeBg">Change BG</button>
+    </div>
+
+    <!-- score board div which will be shown after completion of timer  -->
+    <div class="card text-center score-board container" id="scoreBoard">
+      <div class="card-header" id="performance"></div>
+      <div class="card-body">
+        <h5 class="card-title" id="improvement"></h5>
+        <img src="images/prizeCupImage.jpg" alt="cup-image" class="img-thumbnail prize-img"><br>
+        <p>Score: <span id="finalScore"></span></p>
+        <p>Completed Words: <span id="finalCompletedWords"></span></p>
+        <a href="echoKey.html" class="btn btn-primary">Done</a>
+      </div>
+      <div class="card-footer text-body-secondary">
+        Capture your Achievement
+      </div>
+    </div>
+  </main>
+  <!-- script for this html file -->
+  <script src="symphony.js"></script>
+  <!-- bootstrap script(no where it got used! ) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

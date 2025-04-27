@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+.body{
+    height: 100vh;
+    background-size: cover;
+    background-position:center ;
+    text-align: center;
+}
+/* preloader style */
+#preloader{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    z-index: 100;
+    background-color: rgb(255, 193, 7);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+#imgloader{
+    display: flex;
+}
+
+main{
+    color: white;
+    height: 100vh;
+    
+}
+/* header syling */
+div.heading{
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.heading {
+    border-radius: 5%;
+    margin: auto;
+    text-align: center;
+}
+h1#heading{
+    color: rgb(114, 219, 167) ;  
+    font-size: 60px;
+    font-weight: bolder;
+    text-shadow: 5px 0 5px #e858f5;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.headerImg{
+    width: 60px;
+    height: 60px;
+    
+}
+/* start btn and radio inputs styles */
+.div-elements {
+    display: flex;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+/* infodiv styles */
+#infoDiv{
+    visibility: hidden;
+    position: fixed;
+    top: 40px;
+    text-align:start;
+    height: 84vh;
+    width: 60vw;
+    border-radius: 10%;
+    z-index: 50;
+    background-color: #0dcaf0;
+    color: #000;
+}
+.btnb{
+    text-align: center;
+}
+@media only screen and (max-width:768px) {
+    #infoDiv{
+        font-size: 14px;
+        height: 90vh;
+        width: 95vw;
+    }
+}
+/* infodiv footer styles */
+.footer{
+    color: white;
+}
+@media only screen and (max-width: 608px) {
+    .div-elements {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-content: flex-start;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+
+/* continous timer styles */
+.continous-timer{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #F0db4f;
+}
+
+
+/* flex div containing boxes with box classes and there styles*/
+.flex {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 10% auto;
+    
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    line-height: 2;
+    margin: 10px;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+    background: linear-gradient(35deg,#102C57,#1E0342);
+    background-color: transparent;
+    border: 4px solid white;
+    border-radius: 10px;
+    box-shadow:
+        0 0 5px white,  /* Inner glow */
+        0 0 10px white,
+        0 0 15px purple,
+        0 0 20px rgb(111, 67, 111),/* Outer glow */
+        0 0 40px white, /* Increase the spread for a more prominent glow */
+        0 0 20px purple,
+        0 0 20px #0f0,
+        0 0 30px #0f0;
+}
+/* media query when  for responsiveness */
+@media only screen and (max-width: 608px) {
+    .boxes {
+        display: grid;
+        grid-template-rows: 25%;
+        gap: 0px 4px;
+        grid-auto-flow: row;
+        grid-template-areas: ". . . . .";
+        justify-content: center;
+        align-items: start;
+        justify-items: stretch;
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .box {
+        width: 55px;
+        height: 55px;
+        margin: 5px;
+    }
+}
+
+/* box name styles for displaying complete name */
+.box-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    
+}
+h3{
+    border: 1px solid black;
+    border-radius: 10%;
+    background-color: black;
+    display: inline-block;
+    width: auto;   
+    padding: 10px; 
+
+}
+/* this styling which the box got pressed the class is called in javascript file */
+.pressed {
+    box-shadow: 0 3px 4px 0 green;
+    opacity: 0.5;
+}
+.current-count {
+    text-align: center;
+}
+/* score counter div to show the running scores on running game */
+.score-counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;    
+}
+.one{
+    display: inline-block;
+    background-color: #FF5F00;
+    color: black;
+    width: auto;   
+    padding: 10px; 
+    border-radius: 10%;
+}
+
+/* score board styles to show the end scores on end of the game */
+.score-board {
+    visibility: hidden;
+    display: block;
+    position: fixed;
+    top: -440px;
+    margin: 10px;
+    height: 100px;
+    width: 200px;
+    z-index: 9999;
+}
+/* media query on both score board and score counter */
+
+@media only screen and (max-width: 740px) {
+    .score-board {
+        top: -480px;
+        margin-top: 15px;
+        width: auto; 
+        height: auto;
+        padding: 20px;
+    }
+    .score-counter{
+        flex-direction: column;
+    }
+}
+
+/* image which is shown on score board */
+.prize-img {
+    width: 200px;
+    height: 200px;
+}
